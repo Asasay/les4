@@ -1,6 +1,6 @@
 //e.g server.js
 const express = require("express");
-const ViteExpress = require("vite-express");
+const crypto = require("crypto");
 const passport = require("passport");
 const session = require("express-session");
 const path = require("path");
@@ -33,7 +33,7 @@ app.get("/", (req, res, next) => {
   else next();
 });
 
-app.post("/signout", (req, res, next) => {
+app.all("/signout", (req, res, next) => {
   console.log("PASSPORT " + req.session.passport);
   console.log("USER ID " + req.session.passport?.user.id);
   console.log("SESSIONID " + req.sessionID);

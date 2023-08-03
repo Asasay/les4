@@ -102,6 +102,13 @@ const Home: React.FC = () => {
       ),
     }).then(getUsers);
 
+  const SignOut = () =>
+    fetch("/signout").then((response) => {
+      if (response.redirected) {
+        window.location.href = response.url;
+      }
+    });
+
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
     console.log("selectedRowKeys changed: ", newSelectedRowKeys);
     setSelectedRowKeys(newSelectedRowKeys);
@@ -145,7 +152,9 @@ const Home: React.FC = () => {
         </span>
       </Space>
       <div style={{ marginLeft: 16, float: "right" }}>
-        <Button type="primary">SignOut</Button>
+        <Button type="primary" onClick={SignOut}>
+          SignOut
+        </Button>
       </div>
       <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
     </div>
