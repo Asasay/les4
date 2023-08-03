@@ -1,5 +1,5 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Form, Input, notification } from "antd";
+import { Button, Form, Input, Space, notification } from "antd";
 import { Link } from "react-router-dom";
 
 const Login: React.FC = () => {
@@ -54,10 +54,16 @@ const Login: React.FC = () => {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button">
-          Log in
-        </Button>
-        Or <Link to="../register">register now!</Link>
+        <Space>
+          <Button
+            type="primary"
+            htmlType="submit"
+            className="login-form-button"
+          >
+            Log in
+          </Button>
+          Or <Link to="../register">register now!</Link>
+        </Space>
       </Form.Item>
     </Form>
   );
