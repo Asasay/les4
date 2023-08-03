@@ -14,7 +14,7 @@ MySQLStore.prototype.clearByIDs = async function (id) {
     for (const sid in sessions) {
       if (Object.hasOwnProperty.call(sessions, sid)) {
         const sessionObj = sessions[sid];
-        if (id.includes(sessionObj.passport.user.id))
+        if (id.includes(sessionObj.passport?.user.id))
           sessOptions.store.destroy(sid);
       }
     }
