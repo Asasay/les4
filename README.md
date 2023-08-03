@@ -1,27 +1,13 @@
-# React + TypeScript + Vite
+# Bootcamp auth practice app Task 4
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### To run this app: 
 
-Currently, two official plugins are available:
+`npm install && npm run build && cd server && npm install && npm run start`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You need MySql database running server and you need to create .env file in the /server folder with according fields:
 
-## Expanding the ESLint configuration
+`
+DB_HOST, DB_PORT, DB_USER, DB_PASS, DB_NAME
+`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+DB scheme: /server/db_structure.sql
